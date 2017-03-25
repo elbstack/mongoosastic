@@ -1,3 +1,19 @@
+# elbstack doc
+
+###### i18n locales
+
+Add the option `es_locale` to your model fields and set it to the corresponding locale:
+
+   title_fr: {
+     type: String,
+     es_locale: 'fr'
+   }
+
+Now mongoosastic will index this field into ES. It will only add that field value to the ES
+document body (or multiple field values per schema).
+The index is named as defined in your settings with the locale appended e.g. `books_fr`.
+This is only implemented for non-bulk operations.
+
 # Mongoosastic
 [![Build Status](https://travis-ci.org/mongoosastic/mongoosastic.svg?branch=master)](https://travis-ci.org/mongoosastic/mongoosastic)
 [![NPM version](https://img.shields.io/npm/v/mongoosastic.svg)](https://www.npmjs.com/package/mongoosastic)
